@@ -3,8 +3,9 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
 import {useHelloWorld} from "./usecase/HelloWorldLogic";
+import {useCounterLogic} from "./usecase/ChildLogic";
 
-const helloWorldLogic = useHelloWorld("Vite + Vue")
+const helloWorldLogic = useHelloWorld("Vite + Vue", useCounterLogic())
 </script>
 
 <template>

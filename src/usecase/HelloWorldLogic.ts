@@ -1,12 +1,11 @@
 import {IHelloWorldLogic} from "../components/HelloWorld.vue";
 import {ref} from "vue";
-import {useCounterLogic} from "./ChildLogic";
+import {ICounterLogic} from "../components/Counter.vue";
 
-export const useHelloWorld: (initialMessage: string)
-    => IHelloWorldLogic = (initialMessage: string) => {
+export const useHelloWorld: (initialMessage: string, counterLogic:ICounterLogic)
+    => IHelloWorldLogic = (initialMessage: string, counterLogic:ICounterLogic) => {
 
     const message = ref<string>(initialMessage)
-    const counterLogic = useCounterLogic()
 
     return {
         message,
