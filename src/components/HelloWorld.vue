@@ -1,19 +1,26 @@
+<script lang="ts">
+import {useCounterLogic} from "../usecase/ChildLogic";
+import {Ref} from "vue";
+import {ICounterLogic} from "./Counter.vue";
+
+export interface IHelloWorldLogic {
+  message: Ref<string>
+  counterLogic: ICounterLogic
+}
+</script>
 <script setup lang="ts">
 import Counter from "./Counter.vue";
-import {useChildLogic} from "../usecase/ChildLogic";
+import {useCounterLogic} from "../usecase/ChildLogic";
 
-defineProps<{ msg: string }>()
-
-
-const logic = useChildLogic()
+defineProps<{ logic: IHelloWorldLogic }>()
 
 </script>
 
 <template>
 
-  <h1>{{ msg }}</h1>
+  <h1>{{ logic.message }}</h1>
 
-  <Counter :logic="logic"/>
+  <Counter :logic="logic.counterLogic"/>
 
   <p>
     Check out

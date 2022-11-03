@@ -1,7 +1,7 @@
 import {ref} from "vue";
 import {ICounterLogic} from "../components/Counter.vue";
 
-export const useChildLogic: () => ICounterLogic = () => {
+export const useCounterLogic: () => ICounterLogic = () => {
 
     const count = ref(0)
 
